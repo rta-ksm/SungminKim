@@ -143,10 +143,12 @@ span.highlight {
 
 .text-hanhwa {
   color: #FC4E00;
+  font-weight: bold;
 }
 
 .text-mercedes {
   color: #00a19b;
+  font-weight: bold;
 }
 
 .colored-box {
