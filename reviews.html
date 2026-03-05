@@ -3,47 +3,320 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <title>Sungmin Kim Paper Reviews</title>
-
+    <title>Paper Reviews - Sungmin Kim</title>
     <meta name="author" content="Sungmin Kim">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <style>
+        /* --- Main Layout --- */
+        .review-section {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        /* 3-Column Flexbox Container */
+        .paper-entry {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+
+        /* --- Column 1: Image --- */
+        .paper-image {
+            flex: 0 0 140px;
+        }
+
+        .paper-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            object-fit: cover;
+        }
+
+        /* --- Column 2: Info & Tags --- */
+        .paper-info {
+            flex: 1;
+            position: sticky;
+            top: 20px;
+        }
+
+        .paper-title {
+            font-weight: 700;
+            font-size: 1.15em;
+            color: #222;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .paper-title:hover {
+            color: #1772d0;
+        }
+
+        .paper-authors {
+            font-size: 0.9em;
+            color: #666;
+            font-style: normal;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Tag System */
+        .paper-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            font-size: 0.75em;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        /* 12 CV Topic Colors */
+        .tag-sr {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+
+        /* Super-Resolution */
+        .tag-restoration {
+            background-color: #dcfce7;
+            color: #15803d;
+        }
+
+        /* Image Restoration */
+        .tag-med {
+            background-color: #fce7f3;
+            color: #be185d;
+        }
+
+        /* Medical Imaging */
+        .tag-detect {
+            background-color: #ffedd5;
+            color: #c2410c;
+        }
+
+        /* Object Detection */
+        .tag-seg {
+            background-color: #f3e8ff;
+            color: #7e22ce;
+        }
+
+        /* Image Segmentation */
+        .tag-gen {
+            background-color: #fef08a;
+            color: #854d0e;
+        }
+
+        /* Generative/Diffusion */
+        .tag-3d {
+            background-color: #e5e7eb;
+            color: #374151;
+        }
+
+        /* 3D Vision / NeRF */
+        .tag-ssl {
+            background-color: #cffafe;
+            color: #0f766e;
+        }
+
+        /* Self-Supervised */
+        .tag-video {
+            background-color: #fee2e2;
+            color: #b91c1c;
+        }
+
+        /* Video Analysis */
+        .tag-transformer {
+            background-color: #ede9fe;
+            color: #5b21b6;
+        }
+
+        /* Vision Transformers */
+        .tag-domain {
+            background-color: #fae8ff;
+            color: #a21caf;
+        }
+
+        /* Domain Adaptation */
+        .tag-multimodal {
+            background-color: #ffed4a;
+            color: #9a6b00;
+        }
+
+        /* Multimodal/VLM */
+
+        /* --- Column 3: Modern Review Card --- */
+        .paper-review-box {
+            flex: 2.5;
+            background-color: #ffffff;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            border-radius: 12px;
+            padding: 25px;
+            font-size: 0.95em;
+            color: #444;
+            line-height: 1.6;
+            transition: all 0.25s ease-in-out;
+            box-sizing: border-box;
+        }
+
+        .paper-review-box:hover {
+            transform: translateY(-4px);
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .paper-entry {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .paper-image {
+                flex: none;
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .paper-info {
+                position: static;
+            }
+
+            .paper-review-box {
+                width: 100%;
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 
-<h2>Paper Reviews</h2>
+<body>
+    <table
+        style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <tbody>
+            <tr style="padding:0px">
+                <td style="padding:0px">
 
-<div class="review-section">
+                    <table
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr style="padding:0px">
+                                <td style="padding:2.5%;width:100%;vertical-align:middle">
+                                    <p class="name" style="text-align: center;">
+                                        Sungmin Kim - Paper Reviews
+                                    </p>
+                                    <p style="text-align:center">
+                                        <a href="index.html">Home</a> &nbsp;/&nbsp;
+                                        <a href="mailto:ksm.daniel0114@gmail.com">Email</a> &nbsp;/&nbsp;
+                                        <a href="data/CV.pdf">CV</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    <div class="paper-entry">
-        <div class="paper-info">
-            <a href="https://arxiv.org/abs/2012.09161" class="paper-title" target="_blank">
-                Learning Continuous Image Representation with Local Implicit Image Function
-            </a>
-            <span class="paper-authors">Chen et al., CVPR 2021</span>
-        </div>
+                    <table
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding:16px;width:100%;vertical-align:middle">
+                                    <h2>Reading Log</h2>
 
-        <div class="paper-review-box">
-            <p>This paper presents LIIF, which represents an image as a continuous function. It's particularly useful
-                for super-resolution tasks because it allows for querying at arbitrary coordinates. The integration of a
-                Fourier feature network significantly improves the rendering of high-frequency details, which is highly
-                applicable for restoring fine structures.</p>
-        </div>
-    </div>
+                                    <div class="review-section">
 
-    <div class="paper-entry">
-        <div class="paper-info">
-            <a href="#" class="paper-title" target="_blank">
-                Title of Your Next Paper
-            </a>
-            <span class="paper-authors">Author Name et al., Year</span>
-        </div>
+                                        <div class="paper-entry">
 
-        <div class="paper-review-box">
-            <p>Write your short review, critiques, or summary notes here. The box will automatically expand downwards
-                depending on how much text you write.</p>
-        </div>
-    </div>
+                                            <div class="paper-image">
+                                                <img src="images/liif_teaser.png" alt="Teaser for LIIF paper">
+                                            </div>
 
-</div>
+                                            <div class="paper-info">
+                                                <a href="https://arxiv.org/abs/2012.09161" class="paper-title"
+                                                    target="_blank">
+                                                    Learning Continuous Image Representation with Local Implicit Image
+                                                    Function
+                                                </a>
+                                                <span class="paper-authors">Chen et al., CVPR 2021</span>
+
+                                                <div class="paper-tags">
+                                                    <span class="tag tag-sr">Super-Resolution</span>
+                                                    <span class="tag tag-med">Medical Imaging</span>
+                                                    <span class="tag tag-3d">Implicit Functions</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="paper-review-box">
+                                                <p>This paper presents LIIF, which represents an image as a continuous
+                                                    function. It is particularly useful for super-resolution tasks
+                                                    because it allows for querying at arbitrary coordinates.</p>
+                                                <p>The integration of a Fourier feature network significantly improves
+                                                    the rendering of high-frequency details, which is highly applicable
+                                                    for restoring fine structures in complex datasets like chest X-rays.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="paper-entry">
+
+                                            <div class="paper-image">
+                                                <img src="images/placeholder_teaser.png" alt="Teaser for next paper">
+                                            </div>
+
+                                            <div class="paper-info">
+                                                <a href="#" class="paper-title" target="_blank">
+                                                    Title of Your Next Read Paper
+                                                </a>
+                                                <span class="paper-authors">Author Name et al., Year</span>
+
+                                                <div class="paper-tags">
+                                                    <span class="tag tag-seg">Image Segmentation</span>
+                                                    <span class="tag tag-transformer">Vision Transformers</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="paper-review-box">
+                                                <p>Write your short review, critiques, or summary notes here. The modern
+                                                    card will automatically expand downwards depending on how much text
+                                                    you write.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table
+                        style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                        <tbody>
+                            <tr>
+                                <td style="padding:0px">
+                                    <br>
+                                    <p style="text-align:right;font-size:small;">
+                                        Academic Website code from <a
+                                            href="https://github.com/jonbarron/jonbarron_website">Jon Barron</a>.
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
