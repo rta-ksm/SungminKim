@@ -22,12 +22,16 @@
         .paper-entry {
             display: flex;
             flex-direction: row;
-            align-items: flex-start;
+            align-items: center;
             gap: 20px;
-            padding-bottom: 20px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
         }
 
-        /* --- Column 1: Image --- */
+        .paper-entry:last-child {
+            border-bottom: none;
+        }
+
         .paper-image {
             flex: 0 0 140px;
         }
@@ -39,11 +43,8 @@
             object-fit: cover;
         }
 
-        /* --- Column 2: Info & Tags --- */
         .paper-info {
             flex: 1;
-            position: sticky;
-            top: 20px;
         }
 
         .paper-title {
@@ -68,7 +69,6 @@
             margin-bottom: 10px;
         }
 
-        /* Tag System */
         .paper-tags {
             display: flex;
             flex-wrap: wrap;
@@ -83,81 +83,66 @@
             white-space: nowrap;
         }
 
-        /* 12 CV Topic Colors */
         .tag-sr {
             background-color: #e0f2fe;
             color: #0369a1;
         }
 
-        /* Super-Resolution */
         .tag-restoration {
             background-color: #dcfce7;
             color: #15803d;
         }
 
-        /* Image Restoration */
         .tag-med {
             background-color: #fce7f3;
             color: #be185d;
         }
 
-        /* Medical Imaging */
         .tag-detect {
             background-color: #ffedd5;
             color: #c2410c;
         }
 
-        /* Object Detection */
         .tag-seg {
             background-color: #f3e8ff;
             color: #7e22ce;
         }
 
-        /* Image Segmentation */
         .tag-gen {
             background-color: #fef08a;
             color: #854d0e;
         }
 
-        /* Generative/Diffusion */
         .tag-3d {
             background-color: #e5e7eb;
             color: #374151;
         }
 
-        /* 3D Vision / NeRF */
         .tag-ssl {
             background-color: #cffafe;
             color: #0f766e;
         }
 
-        /* Self-Supervised */
         .tag-video {
             background-color: #fee2e2;
             color: #b91c1c;
         }
 
-        /* Video Analysis */
         .tag-transformer {
             background-color: #ede9fe;
             color: #5b21b6;
         }
 
-        /* Vision Transformers */
         .tag-domain {
             background-color: #fae8ff;
             color: #a21caf;
         }
 
-        /* Domain Adaptation */
         .tag-multimodal {
             background-color: #ffed4a;
             color: #9a6b00;
         }
 
-        /* Multimodal/VLM */
-
-        /* --- Column 3: Modern Review Card --- */
         .paper-review-box {
             flex: 2.5;
             background-color: #ffffff;
@@ -176,10 +161,10 @@
             box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 30px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         }
 
-        /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .paper-entry {
                 flex-direction: column;
+                align-items: flex-start;
                 gap: 15px;
             }
 
@@ -187,10 +172,6 @@
                 flex: none;
                 width: 100%;
                 max-width: 250px;
-            }
-
-            .paper-info {
-                position: static;
             }
 
             .paper-review-box {
@@ -286,9 +267,9 @@
                                             </div>
 
                                             <div class="paper-review-box">
-                                                <p>Write your short review, critiques, or summary notes here. The modern
-                                                    card will automatically expand downwards depending on how much text
-                                                    you write.</p>
+                                                <p>Write your short review, critiques, or summary notes here. With the
+                                                    new alignment, this box will determine the height, and the title to
+                                                    the left will sit perfectly in the center of that height.</p>
                                             </div>
                                         </div>
 
